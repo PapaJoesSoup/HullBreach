@@ -58,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDArmoryExtension.cs" />
     <Compile Include="HullBreachConfig.cs" />
     <Compile Include="Gui.cs" />
     <Compile Include="HullBreachToolBar.cs" />

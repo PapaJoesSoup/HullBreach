@@ -55,6 +55,14 @@ namespace HullBreach
 
             if (!FlightGlobals.ActiveVessel) { return; }
 
+            if (!BDArmoryExtensions.BDArmoryIsInstalled())
+            {
+                GUIStyle centerLabelStyle = new GUIStyle(HighLogic.Skin.label) { alignment = TextAnchor.UpperCenter };
+                GUI.Label(LineRect(ref line), "BDArmory is not installed.  Please check your installation.", centerLabelStyle);
+                toolbarRect.height = (line * toolbarLineHeight) + (toolbarMargin * 2);
+                return;
+            }
+
             if (config.Instance.vesselHullBreach != null)
             {
                 if (config.ecDrain)
